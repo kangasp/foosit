@@ -1,0 +1,5 @@
+To deploy this thing:
+  Log into heroku
+    `heroku login`
+  git push heroku master
+
