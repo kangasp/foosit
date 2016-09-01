@@ -10,7 +10,7 @@
     :license: BSD, see LICENSE for more details.
 """
 
-import os
+import os, datetime
 from sqlite3 import dbapi2 as sqlite3
 from flask import Flask, request, session, g, redirect, url_for, abort, \
      render_template, flash
@@ -42,7 +42,7 @@ def init_db():
     schema = '''drop table if exists entries;
 create table entries (
   id integer primary key autoincrement,
-  time text not null,
+  time timestamp not null,
   side text not null
 );
 '''
@@ -80,8 +80,9 @@ def show_entries():
     cur = db.execute('select time, side from entries order by id desc')
     # cur = db.execute('select title, text from entries order by id desc')
     entries = cur.fetchall()
+    if len(entries) > 20:
+        entries = entries[:20]
     return render_template('show_entries.html', entries=entries)
-
 
 @app.route('/add', methods=['POST'])
 def add_entry():
@@ -94,7 +95,26 @@ def add_entry():
     flash('New entry was successfully posted')
     return redirect(url_for('show_entries'))
 
+@app.route('/north', methods=['GET', 'POST'])
+def add_north():
+    tm = datetime.datetime.now()
+    db = get_db()
+    db.execute('insert into entries (time, side) values (?, ?)',
+               [tm, 'north'])
+    db.commit()
+    return redirect(url_for('show_entries'))
 
+
+@app.route('/south', methods=['GET', 'POST'])
+def add_south():
+    tm = datetime.datetime.now()
+    db = get_db()
+    db.execute('insert into entries (time, side) values (?, ?)',
+               [tm, 'south'])
+    db.commit()
+    return redirect(url_for('show_entries'))
+
+'''
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
@@ -110,12 +130,12 @@ def login():
     return render_template('login.html', error=error)
 
 
+'''
 @app.route('/logout')
 def logout():
     session.pop('logged_in', None)
     flash('You were logged out')
     return redirect(url_for('show_entries'))
-
 
 if __name__ == "__main__":
     app.run()
