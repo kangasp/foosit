@@ -3,16 +3,14 @@
 Box model.
 
 
-FoosBox sleeps.
-Interrupt wakeup on vibrate/shake.
+FoosBox deep sleeps.
+Interrupt wakeup on rst pin by vibrate/shake goal.
 Turn off interrupts.
 Connect to internet. Ping server with side that scored.
 Turn on interrupt. Go back to sleep.
 
 
 Server updates homepage.
-
-
 
 */
 
@@ -169,7 +167,7 @@ void update_score(int side, int score) {
 
 
 void connect_wifi() {
-
+  int i;
   // We start by connecting to a WiFi network
   Serial.println();
   Serial.print("Connecting to ");
@@ -177,10 +175,16 @@ void connect_wifi() {
   
   WiFi.begin(ssid, password);
   
-  while (WiFi.status() != WL_CONNECTED) {
+  i = 0;
+  while (WiFi.status() != WL_CONNECTED)
+    {
     delay(500);
     Serial.print(".");
-  }
+    if( i++ > 10 )
+      {
+      ESP.restart();
+      }
+    }
 
   Serial.println("");
   Serial.println("WiFi connected");  
