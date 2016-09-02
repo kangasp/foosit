@@ -15,6 +15,7 @@ Server updates homepage.
 */
 
 #include <ESP8266WiFi.h>
+#include "FS.h"
 
 #define NORTH 0
 #define SOUTH 1
@@ -53,7 +54,12 @@ void setup() {
   // pinMode(FLASH_BTN_PIN, INPUT);
 
   pinMode(ESP8266_LED, OUTPUT); 
-
+  
+  if (!SPIFFS.begin())
+    {
+    Serial.println("Failed to mount file system");
+    return;
+    }
   connect_wifi();
 }
 
@@ -236,3 +242,24 @@ void test_ping(String url) {
   Serial.println("closing connection");
   // client.stop();
 }
+
+
+
+
+/*
+To think about
+
+bool increment_failed_wifi() {
+  File configFile = SPIFFS.open("/fail.bin", "w");
+  if (!configFile) {
+    Serial.println("Failed to open config file for writing");
+    return false;
+  }
+
+  json.printTo(configFile);
+  return true;
+}
+
+*/
+
+
