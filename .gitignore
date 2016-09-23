@@ -1,4 +1,7 @@
 *.swo
 *.swp
 *.pyc
+*-bak
+*.bak
+_autosave*
 
