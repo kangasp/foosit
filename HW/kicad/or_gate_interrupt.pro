@@ -1,4 +1,4 @@
-update=09/21/16 4:56:07 PM
+update=09/23/16 4:33:10 PM
 version=1
 last_client=kicad
 [pcbnew]
@@ -27,7 +27,7 @@ NetIExt=net
 version=1
 [eeschema]
 version=1
-LibDir=
+LibDir=libs/kicad-ESP8266
 [eeschema/libraries]
 LibName1=power
 LibName2=device
@@ -58,4 +58,4 @@ LibName26=opto
 LibName27=atmel
 LibName28=contrib
 LibName29=valves
-LibName30=kicad-ESP8266/ESP8266
+LibName30=libs/kicad-ESP8266/ESP8266
