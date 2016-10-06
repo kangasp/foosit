@@ -29,6 +29,7 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:ESP8266
+LIBS:or_gate_interrupt-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -411,7 +412,7 @@ U 1 1 57E9B7FD
 P 5150 2700
 F 0 "C1" H 5175 2800 50  0000 L CNN
 F 1 "100uF" H 5175 2600 50  0000 L CNN
-F 2 "Capacitors_SMD:C_1210_HandSoldering" H 5188 2550 50  0000 C CNN
+F 2 "Capacitors_SMD:C_1206_HandSoldering" H 5188 2550 50  0000 C CNN
 F 3 "http://datasheets.avx.com/TAJ.pdf" H 5150 2700 50  0000 C CNN
 F 4 "TAJB107M006RNJ" H 5150 2700 60  0001 C CNN "MN"
 	1    5150 2700
