@@ -1,0 +1,13 @@
+Reference	Value	Footprint	
+U1	74LS32	Housings_SSOP:SSOP-14_5.3x6.2mm_Pitch0.65mm	
+P1	CONN_01X06	Pin_Headers:Pin_Header_Straight_1x06	
+R1	1K	Resistors_SMD:R_1206_HandSoldering	
+R3	1K	Resistors_SMD:R_1206_HandSoldering	
+R2	1K	Resistors_SMD:R_1206_HandSoldering	
+R4	1K	Resistors_SMD:R_1206_HandSoldering	
+U2	74HC02	Housings_SSOP:SSOP-14_5.3x6.2mm_Pitch0.65mm	
+U3	ESP-01v090	ESP8266:ESP-01	
+P2	CONN_01X02	Pin_Headers:Pin_Header_Straight_1x02	
+P3	CONN_01X02	Pin_Headers:Pin_Header_Straight_1x02	
+U4	LT1129CST-3.3	SOT-223	
+C1	40uF	Capacitors_ThroughHole:C_Radial_D6.3_L11.2_P2.5	
