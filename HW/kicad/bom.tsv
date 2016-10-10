@@ -7,11 +7,10 @@ P1	---	CONN_01X06	Pin_Headers:Pin_Header_Straight_1x06
 P2	---	CONN_01X02	Pin_Headers:Pin_Header_Straight_1x02	
 P3	---	CONN_01X02	Pin_Headers:Pin_Header_Straight_1x02	
 C1	F930J476MAA	40uF	Capacitors_ThroughHole:C_Radial_D6.3_L11.2_P2.5	
-R1	---	1K	Resistors_SMD:R_1206_HandSoldering	
-R3	---	1K	Resistors_SMD:R_1206_HandSoldering	
-R2	---	1K	Resistors_SMD:R_1206_HandSoldering	
-R4	---	1K	Resistors_SMD:R_1206_HandSoldering	
-
+R1	RC0805FR-071K5L	1K	Resistors_SMD:R_0806_HandSoldering	
+R2	RC0805FR-071K5L	1K	Resistors_SMD:R_0806_HandSoldering	
+R3	RC0805FR-071K5L	1K	Resistors_SMD:R_0806_HandSoldering	
+R4	RC0805FR-071K5L	1K	Resistors_SMD:R_0806_HandSoldering	
 
 
 
